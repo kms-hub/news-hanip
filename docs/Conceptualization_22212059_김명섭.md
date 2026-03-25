@@ -457,14 +457,23 @@ Android Notification
 | Terms | Description |
 
 | User | 뉴스한입 앱을 사용하는 일반 사용자 |
+
 | News API Service | 외부 뉴스 데이터를 제공하는 서비스 |
+
 | Summary Function | 기사 내용을 짧게 요약하고 핵심 키워드를 추출하는 기능 |
+
 | Android Notification | 안드로이드 기기에서 뉴스 알림을 표시하는 기능 |
+
 | Brief News | 긴 기사 대신 핵심만 짧게 정리한 뉴스 |
+
 | Full Article | 요약 뉴스와 연결되는 원문 기사 |
+
 | News Category | 정치, 경제, 사회, IT 등 뉴스 분야 |
+
 | Notification Time | 사용자가 설정한 뉴스 알림 수신 시간 |
+
 | Saved News | 사용자가 저장해 둔 뉴스 목록 |
+
 | Personalized Brief News | 사용자 관심 분야에 맞게 제공되는 뉴스 요약 |
 
 ---
