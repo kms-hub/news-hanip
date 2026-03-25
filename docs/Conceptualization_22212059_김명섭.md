@@ -480,4 +480,4 @@ Android Notification
 
 ## 9. References
 
-Business purpose의 그림 : https://www.journalist.or.kr/news/article.html?no=57770
+Business purpose를 뒷밤침하는 뉴스 소비 하락 자료 : https://www.journalist.or.kr/news/article.html?no=57770
