@@ -1,2 +1,2 @@
 # news-hanip
-A mobile app that delivers summarized daily news through morning notifications
+뉴스한입은 매일 아침마다 중요 뉴스를 간단하게 요약하여 이용자들에게 알려주는 어플리케이션입니다.
