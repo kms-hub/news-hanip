@@ -1,0 +1,12 @@
+class-diagram.png
+sequence-open-app-by-notification.png
+sequence-subscribe-category-time.png
+sequence-fetch-summarize.png
+sequence-set-silent-time.png
+sequence-mark-as-read.png
+sequence-save-article.png
+sequence-read-full-text.png
+sequence-pause-resume-delivery.png
+sequence-language-setting.png
+sequence-open-settings.png
+state-machine-diagram.png
