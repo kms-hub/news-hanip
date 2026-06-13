@@ -1,45 +1,50 @@
 plugins {
-    id 'com.android.application'
-    id 'com.facebook.react'
+    id "com.android.application"
+    id "com.facebook.react"
 }
 
 react {
     autolinkLibrariesWithApp()
+
+    // debug APK??Metro ?놁씠 ?ㅽ뻾?섎룄濡?JS bundle???ы븿?쒗궓??
+    // 湲곕낯媛믪? ["debug"]?쇱꽌 debug APK??bundle??鍮좎쭏 ???덈떎.
+    debuggableVariants = []
 }
 
 def enableProguardInReleaseBuilds = false
-
-def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
+def jscFlavor = "io.github.react-native-community:jsc-android:2026004.+"
+def enableHermes = (findProperty("hermesEnabled") ?: "true").toBoolean()
 
 android {
-    namespace 'com.newshanip'
+    namespace "com.newshanip"
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId 'com.newshanip'
+        applicationId "com.newshanip"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName '1.0'
+        versionName "1.0"
     }
 
-
     buildTypes {
-        debug { }
+        debug {
+        }
+
         release {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
 }
 
 dependencies {
-    implementation('com.facebook.react:react-android')
-    implementation('androidx.core:core:1.15.0')
+    implementation("com.facebook.react:react-android")
+    implementation("androidx.core:core:1.15.0")
 
-    if (hermesEnabled.toBoolean()) {
-        implementation('com.facebook.react:hermes-android')
+    if (enableHermes) {
+        implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
     }

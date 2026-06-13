@@ -8,6 +8,10 @@ on:
 jobs:
   build-apk:
     runs-on: ubuntu-latest
+
+    env:
+      GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m -Dfile.encoding=UTF-8"
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -35,7 +39,7 @@ jobs:
         run: npm install
 
       - name: Build debug APK
-        run: cd android && gradle :app:assembleDebug --no-daemon
+        run: cd android && gradle :app:assembleDebug --no-daemon --stacktrace
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
