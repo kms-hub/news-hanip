@@ -1,0 +1,32 @@
+{
+  "name": "NewsHanip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "뉴스한입 - 매일 아침 주요 뉴스를 요약해서 알려주는 React Native Android 앱",
+  "scripts": {
+    "android": "react-native run-android",
+    "start": "react-native start",
+    "build:debug": "cd android && gradle :app:assembleDebug",
+    "build:release": "cd android && gradle :app:assembleRelease"
+  },
+  "dependencies": {
+    "@react-native/new-app-screen": "0.81.4",
+    "react": "19.1.0",
+    "react-native": "0.81.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "20.0.0",
+    "@react-native-community/cli-platform-android": "20.0.0",
+    "@react-native/babel-preset": "0.81.4",
+    "@react-native/eslint-config": "0.81.4",
+    "@react-native/metro-config": "0.81.4",
+    "@react-native/typescript-config": "0.81.4",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
