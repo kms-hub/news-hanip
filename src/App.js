@@ -12,54 +12,89 @@ import {
   View,
 } from 'react-native';
 
+const ko = {
+  appName: '\uB274\uC2A4\uD55C\uC785',
+  homeTitle: '\uC624\uB298\uC758 \uB274\uC2A4 \uC694\uC57D',
+  keywordTitle: '\uD0A4\uC6CC\uB4DC \uC124\uC815',
+  favoriteTitle: '\uC990\uACA8\uCC3E\uAE30',
+  heroTitle: '\uB9E4\uC77C \uC544\uCE68 \uB274\uC2A4\uB97C \uD55C\uC785 \uD06C\uAE30\uB85C',
+  heroDesc: '\uAD00\uC2EC \uD0A4\uC6CC\uB4DC\uC5D0 \uB9DE\uB294 \uC8FC\uC694 \uB274\uC2A4\uB97C \uC9E7\uAC8C \uC694\uC57D\uD574 \uBCF4\uC5EC\uC8FC\uB294 Android \uC571\uC785\uB2C8\uB2E4.',
+  refresh: '\uC694\uC57D \uC0C8\uB85C\uACE0\uCE68',
+  keywords: '\uAD00\uC2EC \uD0A4\uC6CC\uB4DC',
+  keywordDesc: '\uC27C\uD45C\uB85C \uAD6C\uBD84\uD574\uC11C \uC9C1\uC811 \uC785\uB825\uD558\uAC70\uB098 \uCD94\uCC9C \uD0A4\uC6CC\uB4DC\uB97C \uC120\uD0DD\uD558\uC138\uC694.',
+  placeholder: '\uC608: \uC778\uACF5\uC9C0\uB2A5, \uBC18\uB3C4\uCCB4, \uB300\uD559\uC0DD',
+  saveKeyword: '\uD0A4\uC6CC\uB4DC \uC800\uC7A5',
+  noFavorite: '\uC800\uC7A5\uD55C \uB274\uC2A4\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4',
+  noFavoriteDesc: '\uD648 \uD654\uBA74\uC5D0\uC11C \uBCC4\uD45C\uB97C \uB20C\uB7EC \uB274\uC2A4\uB97C \uC990\uACA8\uCC3E\uAE30\uC5D0 \uCD94\uAC00\uD558\uC138\uC694.',
+  openArticle: '\uC0C1\uC138\uAE30\uC0AC \uC5F4\uAE30',
+  home: '\uD648',
+  keyword: '\uD0A4\uC6CC\uB4DC',
+  favorite: '\uC990\uACA8\uCC3E\uAE30',
+  saveDoneTitle: '\uC800\uC7A5 \uC644\uB8CC',
+  saveDoneMsg: '\uAD00\uC2EC \uD0A4\uC6CC\uB4DC\uAC00 \uC800\uC7A5\uB418\uC5C8\uC2B5\uB2C8\uB2E4.',
+  checkKeywordTitle: '\uD0A4\uC6CC\uB4DC \uD655\uC778',
+  checkKeywordMsg: '\uD0A4\uC6CC\uB4DC\uB97C 1\uAC1C \uC774\uC0C1 \uC785\uB825\uD574 \uC8FC\uC138\uC694.',
+  openFailTitle: '\uC5F4\uAE30 \uC2E4\uD328',
+  openFailMsg: '\uC0C1\uC138\uAE30\uC0AC \uB9C1\uD06C\uB97C \uC5F4 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.',
+};
+
 const allNews = [
   {
     id: 'ai-1',
     category: 'AI',
-    keyword: '?멸났吏??,
-    title: '?앹꽦??AI, ??숈깮 ?숈뒿 ?꾧뎄濡??뺤궛',
+    keyword: '\uC778\uACF5\uC9C0\uB2A5',
+    title: '\uC0DD\uC131\uD615 AI, \uB300\uD559\uC0DD \uD559\uC2B5 \uB3C4\uAD6C\uB85C \uD655\uC0B0',
     summary:
-      '?앹꽦??AI媛 ?먮즺 ?뺣━, ?붿빟, 肄붾뱶 ?숈뒿 ???ㅼ뼇???숈뒿 蹂댁“ ?꾧뎄濡??쒖슜?섍퀬 ?덉뒿?덈떎. ?댁뒪?쒖엯? ?듭떖 ?댁슜??吏㏐쾶 ?뺣━??留ㅼ씪 ?꾩묠 ?뺤씤?????덈룄濡??뺤뒿?덈떎.',
-    source: '?댁뒪?쒖엯 ?몄쭛遺',
-    url: 'https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5',
+      '\uC0DD\uC131\uD615 AI\uAC00 \uC790\uB8CC \uC815\uB9AC, \uC694\uC57D, \uCF54\uB4DC \uD559\uC2B5 \uB4F1 \uB2E4\uC591\uD55C \uD559\uC2B5 \uBCF4\uC870 \uB3C4\uAD6C\uB85C \uD65C\uC6A9\uB418\uACE0 \uC788\uC2B5\uB2C8\uB2E4.',
+    source: '\uB274\uC2A4\uD55C\uC785 \uD3B8\uC9D1\uBD80',
+    url: 'https://news.google.com/search?q=AI',
   },
   {
     id: 'semiconductor-1',
-    category: '?곗뾽',
-    keyword: '諛섎룄泥?,
-    title: '諛섎룄泥??곗뾽, AI ?섏슂? ?④퍡 ?깆옣??,
+    category: '\uC0B0\uC5C5',
+    keyword: '\uBC18\uB3C4\uCCB4',
+    title: '\uBC18\uB3C4\uCCB4 \uC0B0\uC5C5, AI \uC218\uC694\uC640 \uD568\uAED8 \uC131\uC7A5\uC138',
     summary:
-      'AI ?쒕쾭? 怨좎꽦??而댄벂???섏슂媛 ?섎㈃??諛섎룄泥??곗뾽??以묒슂?깆씠 而ㅼ?怨??덉뒿?덈떎. 愿??湲곗뾽怨?湲곗닠 ?숉뼢??袁몄????뺤씤?섎뒗 寃껋씠 以묒슂?⑸땲??',
-    source: '?댁뒪?쒖엯 ?몄쭛遺',
-    url: 'https://news.google.com/search?q=%EB%B0%98%EB%8F%84%EC%B2%B4',
+      'AI \uC11C\uBC84\uC640 \uACE0\uC131\uB2A5 \uCEF4\uD4E8\uD305 \uC218\uC694\uAC00 \uB298\uBA74\uC11C \uBC18\uB3C4\uCCB4 \uC0B0\uC5C5\uC758 \uC911\uC694\uC131\uC774 \uCEE4\uC9C0\uACE0 \uC788\uC2B5\uB2C8\uB2E4.',
+    source: '\uB274\uC2A4\uD55C\uC785 \uD3B8\uC9D1\uBD80',
+    url: 'https://news.google.com/search?q=semiconductor',
   },
   {
     id: 'student-1',
-    category: '泥?뀈',
-    keyword: '??숈깮',
-    title: '??숈깮???꾪븳 ?뺤콉 ?뺣낫 ?뺤씤 ?꾩슂',
+    category: '\uCCAD\uB144',
+    keyword: '\uB300\uD559\uC0DD',
+    title: '\uB300\uD559\uC0DD\uC744 \uC704\uD55C \uC815\uCC45 \uC815\uBCF4 \uD655\uC778 \uD544\uC694',
     summary:
-      '?ν븰湲? 泥?뀈 吏?먭툑, 臾명솕?⑥뒪 ????숈깮???쒖슜?????덈뒗 ?뺤콉???ㅼ뼇?⑸땲?? 愿???ㅼ썙?쒕? ?ㅼ젙???꾩슂???뺣낫瑜?鍮좊Ⅴ寃??뺤씤?????덉뒿?덈떎.',
-    source: '?댁뒪?쒖엯 ?몄쭛遺',
-    url: 'https://news.google.com/search?q=%EB%8C%80%ED%95%99%EC%83%9D+%EC%A7%80%EC%9B%90%EC%A0%95%EC%B1%85',
+      '\uC7A5\uD559\uAE08, \uCCAD\uB144 \uC9C0\uC6D0\uAE08, \uBB38\uD654\uD328\uC2A4 \uB4F1 \uB300\uD559\uC0DD\uC774 \uD65C\uC6A9\uD560 \uC218 \uC788\uB294 \uC815\uCC45\uC744 \uBE60\uB974\uAC8C \uD655\uC778\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.',
+    source: '\uB274\uC2A4\uD55C\uC785 \uD3B8\uC9D1\uBD80',
+    url: 'https://news.google.com/search?q=student+policy',
   },
   {
     id: 'global-1',
-    category: '援?젣',
-    keyword: '誘멸뎅',
-    title: '援?젣 ?댁뒪, 援?궡 寃쎌젣? 湲곗닠 ?곗뾽???곹뼢',
+    category: '\uAD6D\uC81C',
+    keyword: '\uBBF8\uAD6D',
+    title: '\uAD6D\uC81C \uB274\uC2A4, \uAD6D\uB0B4 \uACBD\uC81C\uC640 \uAE30\uC220 \uC0B0\uC5C5\uC5D0 \uC601\uD5A5',
     summary:
-      '誘멸뎅??湲덈━, 湲곗닠 洹쒖젣, ?곗뾽 ?뺤콉? 援?궡 湲곗뾽怨?痍⑥뾽 ?쒖옣?먮룄 ?곹뼢??以????덉뒿?덈떎. 二쇱슂 援?젣 ?댁뒋瑜?吏㏐쾶 ?뺤씤???먮쫫???뚯븙?????덉뒿?덈떎.',
-    source: '?댁뒪?쒖엯 ?몄쭛遺',
-    url: 'https://news.google.com/search?q=%EB%AF%B8%EA%B5%AD+%EA%B8%B0%EC%88%A0+%EC%82%B0%EC%97%85',
+      '\uBBF8\uAD6D\uC758 \uAE08\uB9AC, \uAE30\uC220 \uADDC\uC81C, \uC0B0\uC5C5 \uC815\uCC45\uC740 \uAD6D\uB0B4 \uAE30\uC5C5\uACFC \uCDE8\uC5C5 \uC2DC\uC7A5\uC5D0\uB3C4 \uC601\uD5A5\uC744 \uC904 \uC218 \uC788\uC2B5\uB2C8\uB2E4.',
+    source: '\uB274\uC2A4\uD55C\uC785 \uD3B8\uC9D1\uBD80',
+    url: 'https://news.google.com/search?q=us+technology+industry',
   },
 ];
 
-const recommendedKeywords = ['?멸났吏??, '諛섎룄泥?, '??숈깮', '誘멸뎅'];
+const recommendedKeywords = [
+  '\uC778\uACF5\uC9C0\uB2A5',
+  '\uBC18\uB3C4\uCCB4',
+  '\uB300\uD559\uC0DD',
+  '\uBBF8\uAD6D',
+];
 
 export default function App() {
   const [screen, setScreen] = useState('home');
-  const [keywords, setKeywords] = useState(['?멸났吏??, '諛섎룄泥?, '??숈깮']);
+  const [keywords, setKeywords] = useState([
+    '\uC778\uACF5\uC9C0\uB2A5',
+    '\uBC18\uB3C4\uCCB4',
+    '\uB300\uD559\uC0DD',
+  ]);
   const [keywordInput, setKeywordInput] = useState(keywords.join(', '));
   const [favorites, setFavorites] = useState([]);
   const [refreshCount, setRefreshCount] = useState(0);
@@ -69,6 +104,13 @@ export default function App() {
     const list = filtered.length > 0 ? filtered : allNews;
     return refreshCount % 2 === 0 ? list : [...list].reverse();
   }, [keywords, refreshCount]);
+
+  const title =
+    screen === 'home'
+      ? ko.homeTitle
+      : screen === 'keywords'
+        ? ko.keywordTitle
+        : ko.favoriteTitle;
 
   const toggleKeyword = keyword => {
     const next = keywords.includes(keyword)
@@ -85,13 +127,13 @@ export default function App() {
       .filter(Boolean);
 
     if (next.length === 0) {
-      Alert.alert('?ㅼ썙???뺤씤', '?ㅼ썙?쒕? 1媛??댁긽 ?낅젰??二쇱꽭??');
+      Alert.alert(ko.checkKeywordTitle, ko.checkKeywordMsg);
       return;
     }
 
     setKeywords(next);
     setScreen('home');
-    Alert.alert('????꾨즺', '愿???ㅼ썙?쒓? ??λ릺?덉뒿?덈떎.');
+    Alert.alert(ko.saveDoneTitle, ko.saveDoneMsg);
   };
 
   const toggleFavorite = id => {
@@ -105,7 +147,7 @@ export default function App() {
     if (supported) {
       await Linking.openURL(url);
     } else {
-      Alert.alert('?닿린 ?ㅽ뙣', '?곸꽭湲곗궗 留곹겕瑜??????놁뒿?덈떎.');
+      Alert.alert(ko.openFailTitle, ko.openFailMsg);
     }
   };
 
@@ -120,14 +162,8 @@ export default function App() {
 
       <View style={styles.header}>
         <View>
-          <Text style={styles.appName}>?댁뒪?쒖엯</Text>
-          <Text style={styles.title}>
-            {screen === 'home'
-              ? '?ㅻ뒛???댁뒪 ?붿빟'
-              : screen === 'keywords'
-                ? '?ㅼ썙???ㅼ젙'
-                : '利먭꺼李얘린'}
-          </Text>
+          <Text style={styles.appName}>{ko.appName}</Text>
+          <Text style={styles.title}>{title}</Text>
         </View>
         <Text style={styles.dateText}>
           {new Date().toLocaleDateString('ko-KR', {
@@ -141,30 +177,26 @@ export default function App() {
       <ScrollView contentContainerStyle={styles.content}>
         {screen === 'home' && (
           <View style={styles.heroCard}>
-            <Text style={styles.heroTitle}>留ㅼ씪 ?꾩묠 ?댁뒪瑜??쒖엯 ?ш린濡?/Text>
-            <Text style={styles.heroDesc}>
-              愿???ㅼ썙?쒖뿉 留욌뒗 二쇱슂 ?댁뒪瑜?吏㏐쾶 ?붿빟??蹂댁뿬二쇰뒗 Android ?깆엯?덈떎.
-            </Text>
+            <Text style={styles.heroTitle}>{ko.heroTitle}</Text>
+            <Text style={styles.heroDesc}>{ko.heroDesc}</Text>
             <TouchableOpacity
               style={styles.whiteButton}
               onPress={() => setRefreshCount(value => value + 1)}>
-              <Text style={styles.whiteButtonText}>?붿빟 ?덈줈怨좎묠</Text>
+              <Text style={styles.whiteButtonText}>{ko.refresh}</Text>
             </TouchableOpacity>
           </View>
         )}
 
         {screen === 'keywords' ? (
           <View style={styles.card}>
-            <Text style={styles.sectionTitle}>愿???ㅼ썙??/Text>
-            <Text style={styles.description}>
-              ?쇳몴濡?援щ텇?댁꽌 吏곸젒 ?낅젰?섍굅??異붿쿇 ?ㅼ썙?쒕? ?좏깮?섏꽭??
-            </Text>
+            <Text style={styles.sectionTitle}>{ko.keywords}</Text>
+            <Text style={styles.description}>{ko.keywordDesc}</Text>
             <TextInput
               value={keywordInput}
               onChangeText={setKeywordInput}
               multiline
               style={styles.input}
-              placeholder="?? ?멸났吏?? 諛섎룄泥? ??숈깮"
+              placeholder={ko.placeholder}
             />
 
             <View style={styles.chipWrap}>
@@ -188,17 +220,15 @@ export default function App() {
             </View>
 
             <TouchableOpacity style={styles.primaryButton} onPress={saveKeywords}>
-              <Text style={styles.primaryButtonText}>?ㅼ썙?????/Text>
+              <Text style={styles.primaryButtonText}>{ko.saveKeyword}</Text>
             </TouchableOpacity>
           </View>
         ) : (
           <>
             {newsForScreen.length === 0 ? (
               <View style={styles.card}>
-                <Text style={styles.sectionTitle}>??ν븳 ?댁뒪媛 ?놁뒿?덈떎</Text>
-                <Text style={styles.description}>
-                  ???붾㈃?먯꽌 蹂꾪몴瑜??뚮윭 ?댁뒪瑜?利먭꺼李얘린??異붽??섏꽭??
-                </Text>
+                <Text style={styles.sectionTitle}>{ko.noFavorite}</Text>
+                <Text style={styles.description}>{ko.noFavoriteDesc}</Text>
               </View>
             ) : (
               newsForScreen.map(item => (
@@ -207,7 +237,7 @@ export default function App() {
                     <Text style={styles.badge}>{item.category}</Text>
                     <TouchableOpacity onPress={() => toggleFavorite(item.id)}>
                       <Text style={styles.star}>
-                        {favorites.includes(item.id) ? '?? : '??}
+                        {favorites.includes(item.id) ? '*' : '+'}
                       </Text>
                     </TouchableOpacity>
                   </View>
@@ -217,7 +247,7 @@ export default function App() {
                   <TouchableOpacity
                     style={styles.linkButton}
                     onPress={() => openUrl(item.url)}>
-                    <Text style={styles.linkButtonText}>?곸꽭湲곗궗 ?닿린</Text>
+                    <Text style={styles.linkButtonText}>{ko.openArticle}</Text>
                   </TouchableOpacity>
                 </View>
               ))
@@ -228,9 +258,9 @@ export default function App() {
 
       <View style={styles.bottomNav}>
         {[
-          ['home', '??],
-          ['keywords', '?ㅼ썙??],
-          ['favorites', '利먭꺼李얘린'],
+          ['home', ko.home],
+          ['keywords', ko.keyword],
+          ['favorites', ko.favorite],
         ].map(([key, label]) => (
           <TouchableOpacity
             key={key}
@@ -339,7 +369,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 999,
   },
-  star: {fontSize: 28, color: '#F59E0B'},
+  star: {fontSize: 26, color: '#F59E0B', fontWeight: '900'},
   newsTitle: {fontSize: 18, fontWeight: '800', color: '#111827', marginTop: 10},
   newsSummary: {fontSize: 14, color: '#374151', lineHeight: 21, marginTop: 8},
   source: {fontSize: 12, color: '#6B7280', marginTop: 10},
