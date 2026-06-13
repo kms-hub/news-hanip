@@ -1,4 +1,4 @@
-﻿package com.newshanip;
+package com.newshanip;
 
 import android.app.Application;
 
